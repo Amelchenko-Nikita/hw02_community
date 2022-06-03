@@ -14,6 +14,7 @@ def index(request):
     }
     return render(request, 'posts/index.html', context)
 
+
 def group_posts(request, slug):
     date = Meta.ordering
     posts = Post.objects.filter(group=group).order_by(date)
