@@ -7,6 +7,8 @@ User = get_user_model()
 
 
 class Post(models.Model):
+    class Meta:
+        ordering = '-pub_date'
     text = models.TextField(verbose_name='texts')
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
@@ -18,9 +20,6 @@ class Post(models.Model):
         'Group', on_delete=models.SET_NULL, related_name='group_posts',
         blank=True, null=True
     )
-    class Meta:
-        
-        ordering = '-pub_date'
 
 
 class Group(models.Model):
