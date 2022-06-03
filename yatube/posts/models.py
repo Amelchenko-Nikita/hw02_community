@@ -18,8 +18,8 @@ class Post(models.Model):
         'Group', on_delete=models.SET_NULL, related_name='group_posts',
         blank=True, null=True
     )
-     class Meta:
-         ordering = '(-pub_date)'
+    class Meta:
+        ordering = '(-pub_date)'
 
 
 class Group(models.Model):
