@@ -6,10 +6,11 @@ from .models import Post, Group
 
 def index(request):
     posts = Post.objects.ordering[:10]
+    template = 'posts/index.html'
     context = {
         'posts': posts
     }
-    return render(request, 'posts/index.html', context)
+    return render(request, template, context)
 
 
 def group_posts(request, slug):
