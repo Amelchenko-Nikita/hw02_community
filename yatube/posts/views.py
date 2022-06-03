@@ -14,11 +14,12 @@ def index(request):
     return render(request, 'posts/index.html', context)
 
 def group_posts(request, slug):
-    posts = Post.objects.filter(group=group).order_by('-pub_date')[:10]
+    date = Meta.ordering
+    posts = Post.objects.filter(group=group).order_by(date)
     group = get_object_or_404(Group, slug=slug)
-    template = 'posts/group_list.html'
     context = {
-        'group':group,
-        'posts':posts,
+        'POSTS_PER_PAGE': settings.POSTS_PER_PAGE,
+        'group': group,
+        'posts': posts,
     }
-    return render(request, template, context)
+    return render(request, 'posts/group_list.html', context)
