@@ -18,6 +18,8 @@ class Post(models.Model):
         'Group', on_delete=models.SET_NULL, related_name='group_posts',
         blank=True, null=True
     )
+    class Meta:
+    ordering = '-pub_date'
 
 
 class Group(models.Model):
@@ -28,6 +30,3 @@ class Group(models.Model):
     def __str__(self):
         return self.title
 
-
-class Meta:
-    ordering = '-pub_date'
