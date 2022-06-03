@@ -4,6 +4,7 @@ from .models import Post, Group, Meta
 
 # Create your views here
 
+
 def index(request):
     date = Meta.ordering
     posts = Post.objects.order_by(date)
