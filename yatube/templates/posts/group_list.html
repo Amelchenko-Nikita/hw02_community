@@ -1,16 +1,21 @@
 {% extends 'base.html' %}
-{% block title %}
-{% endblock %}
 {% block content %}
 <div class="container">
-  <h1>{{ group.title }}</h1>
-  <p>{{ group.description }}</p>
-  {% for post in posts %}
+  <h1>Лев Толстой – зеркало русской революции.</h1>
+  <p>Группа тайных поклонников графа.</p>
   <article>
-    {% include 'includes/ul.html' %}
+    {% for post in posts %}
+    <ul>
+      <li>
+        Автор: {{ post.author.get_full_name }}
+      </li>
+      <li>
+        Дата публикации: {{ post.pub_date|date:"d E Y" }}
+      </li>
+    </ul>
     <p>{{ post.text }}</p>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
   </article>
-  {% if not forloop.last %}<hr>{% endif %}
-  {% endfor %}
 </div>
 {% endblock %}
