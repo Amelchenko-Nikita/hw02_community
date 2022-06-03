@@ -16,7 +16,7 @@ def group_posts(request, slug):
     posts = Post.objects.filter(group=group).all[:10]
     group = get_object_or_404(Group, slug=slug)
     context = {
-        'group': group,
         'posts': posts,
+        'group': group,
     }
     return render(request, 'posts/group_list.html', context)
