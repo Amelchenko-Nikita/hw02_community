@@ -13,8 +13,8 @@ def index(request):
 
 
 def group_posts(request, slug):
-    posts = Post.objects.filter(group=group).all[:10]
     group = get_object_or_404(Group, slug=slug)
+    posts = Post.objects.filter(group=group).all[:10]
     context = {
         'posts': posts,
         'group': group,
