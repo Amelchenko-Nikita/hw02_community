@@ -5,7 +5,7 @@ from .models import Post, Group
 
 
 def index(request):
-    posts = Post.objects.ordering[:10]
+    posts = Post.objects.order_by(date)[:10]
     context = {
         'posts': posts
     }
