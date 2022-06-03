@@ -17,7 +17,7 @@ def index(request):
 
 def group_posts(request, slug):
     date = Meta.ordering
-    posts = Post.objects.filter(grop=group).order_by(date)
+    posts = Post.objects.filter(group = group).order_by(date)
     group = get_object_or_404(Group, slug=slug)
     context = {
         'POSTS_PER_PAGE': settings.POSTS_PER_PAGE,
