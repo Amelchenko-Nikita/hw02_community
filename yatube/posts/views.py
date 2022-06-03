@@ -5,7 +5,7 @@ from .models import Post, Group
 
 
 def index(request):
-    posts = Post.objects.ordering[:10]
+    posts = Post.objects.all[:10]
     context = {
         'posts': posts
     }
@@ -13,7 +13,7 @@ def index(request):
 
 
 def group_posts(request, slug):
-    posts = Post.objects.filter(group=group).ordering[:10]
+    posts = Post.objects.filter(group=group).all[:10]
     group = get_object_or_404(Group, slug=slug)
     context = {
         'group': group,
