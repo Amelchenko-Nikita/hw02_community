@@ -30,4 +30,4 @@ class Group(models.Model):
 
 
 class Meta:
-   ordering = '-pub_date'
+    ordering = '-pub_date'
