@@ -7,7 +7,7 @@ User = get_user_model()
 
 
 class Post(models.Model):
-    text = models.TextField(verbose_name=' texts ')
+    text = models.TextField(verbose_name='texts')
     pub_date = models.DateTimeField(auto_now_add=True)
     author = models.ForeignKey(
         User,
