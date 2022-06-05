@@ -6,10 +6,10 @@
   <h1>{{ group.title }}</h1>
   <p>{{ group.description }}</p>
   {% for post in posts %}
-  <article>
-    {% include 'includes/ul.html' %}
-    <p>{{ post.text }}</p>
-  </article>
+    <article>
+      {% include 'includes/ul.html' %}
+      <p>{{ post.text }}</p>
+    </article>
   {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 </div>
