@@ -10,7 +10,7 @@
       {% include 'includes/ul.html' %}
       <p>{{ post.text }}</p>
     </article>
-  {% if not forloop.last %}<hr>{% endif %}
+    {% if not forloop.last %}<hr>{% endif %}
   {% endfor %}
 </div>
 {% endblock %}
